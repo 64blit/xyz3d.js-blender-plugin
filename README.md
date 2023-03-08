@@ -4,9 +4,7 @@ This plugin adds custom properties to the selected objects which are read by the
 
 ![overview](./docs/1-overview.png)
 
-## how to use
-
----
+# how to use
 
 ## Models
 
