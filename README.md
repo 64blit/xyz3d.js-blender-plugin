@@ -2,6 +2,8 @@
 
 This plugin adds custom properties to the selected objects which are read by the xyz3d.js library.
 
+https://www.youtube.com/watch?v=3mRjiqz_XWI
+
 ![overview](./docs/1-overview.png)
 
 # how to use
