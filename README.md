@@ -18,21 +18,28 @@ If the object is "clickable" or "hoverable"
 
 1. set it as "interactable"
 2. add a bounding (convex) mesh around it that will work as bounds the user clicks
-3. set viewport visibility of this convex mesh to bounds only
-4. click the convex mesh, then it's interactable mesh counterpart, and select "Set Raycast Mesh". (AKA selected=interactable, active=raycast mesh)
+3. set viewport visibility of this bounding mesh to bounds only (optionally)
+4. click the bounding mesh, then it's interactable mesh counterpart, and select "Set Raycast Mesh". (AKA selected=interactable, active=raycast mesh)
 
 #### SCENE ZONES
 
-These define where in your 3d scene the camera should be when navigating your site. This is similar to how websites are often divided into multiple areas or pages, such as the "HomePage" "Shop" "About Us" etc.
+This is how xyz3d groups models and compartmentalizes interactive/background components. Only buttons in the currently viewing scene zone are interactable. Each scene zone requires a Camera Anchor mesh, this is where the camera will move to when you enter the scene zone. The camera will then be moved back if the vertices of your interactable and background meshes are not in the camera's frustum. Note, a camera anchor order is mandatory - this starts at 0.
 
-1. Create a box (optionally set visibility to bounds)
-2. Move the box where you would like the camera to be
-3. Set the name of the zone, click the box, click "Apply" to "Set Zone" (pictured is shop)
+0. Enter a scene zone name at the top of the plugin, ie Home or Demo
+1. Create a box for the camera anchor (recommended to set viewport visibility to bounds)
+2. Move this box to where you would like the camera to be for this zone
+3. Click this box and set it as a camera anchor via the apply button, also click the set scene zone button and set it's camera anchor order.
 4. Select the meshes corresponding to this zone and also click "Apply" to "Set Zone"
-5. Repeat for all sections of the site
-6. As a convenience, set the index of the zones in the order they should be seen. "HomePage" or is usually index:1 for example.
+5. Repeat for all scene zones.
 
 #### ANIMATIONS
+
+Looping animations will play continuously, Hover Animations play when the user hovers over the model, as Click animations fire on user clicks, and Camera animations fire on user clicks as well. Note, only interactable meshes are raycasted against, so this means click, hover, and camera animations will only fire on the interactable types.
+
+1. Open the dope sheet, then navigate to the action editor
+2. Copy the name of the animation you would like to add to your model
+3. Paste this name into the animation text box found via the plugin
+4. Apply this animation to any animation types as required via the Apply buttons
 
 ## gltf export settings
 
